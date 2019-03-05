@@ -8,22 +8,29 @@ import android.os.Bundle;
 
 import edu.cascadia.mobile.apps.passwordcheck.databinding.ActivityMainBinding;
 
+import static edu.cascadia.mobile.apps.passwordcheck.BR.viewModel;
+
 public class MainActivity extends AppCompatActivity {
 
     //TODO: create a private ViewModel instance variable
+    private PasswordViewModel mPasswordViewModel;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         //Comment out the setContentView - we'll use a binding instead
-        setContentView(R.layout.activity_main);
+        //setContentView(R.layout.activity_main);
 
         //TODO: Create a new binding using DataBindingUtil
+       ActivityMainBinding binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
 
         //TODO: Create a new PasswordViewModel object
+             mPasswordViewModel = new PasswordViewModel();
 
         //TODO: Set the binding's ViewModel to your new PasswordViewModel
-
+        //binding.setVariable(viewModel, mPasswordViewModel);
+        binding.setViewModel(mPasswordViewModel);
 
     }
 }
