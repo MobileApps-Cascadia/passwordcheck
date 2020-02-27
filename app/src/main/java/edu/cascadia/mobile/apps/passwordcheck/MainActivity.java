@@ -13,7 +13,7 @@ import edu.cascadia.mobile.apps.passwordcheck.databinding.ActivityMainBinding;
 public class MainActivity extends AppCompatActivity {
 
     //TODO: create a private ViewModel instance variable
-    private PasswordViewModel passwordViewModel;
+    private PasswordViewModel viewModel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,10 +26,11 @@ public class MainActivity extends AppCompatActivity {
 
         //TODO: Create a new PasswordViewModel object
 
-        passwordViewModel = new ViewModelProvider(this).get(PasswordViewModel.class);
+        viewModel = new ViewModelProvider(this).get(PasswordViewModel.class);
 
         //TODO: Set the binding's ViewModel to your new PasswordViewModel
-        binding.setViewModel(passwordViewModel);
+        binding.setViewModel(viewModel);
+        binding.setLifecycleOwner(this);
 
 
     }
