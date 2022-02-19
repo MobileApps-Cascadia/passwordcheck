@@ -58,7 +58,7 @@
             app:layout_constraintBaseline_toBaselineOf="@+id/qualityPrompt"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/qualityPrompt"
-            android:text=""/>
+            android:text="@{viewModel.passwordQuality}"/>
         <!-- TODO: create a ONE-way reference to the passwordQuality property using @{viewModel.passwordQuality}-->
 
     </androidx.constraintlayout.widget.ConstraintLayout>
