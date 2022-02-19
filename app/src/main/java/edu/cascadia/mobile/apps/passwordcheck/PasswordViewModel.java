@@ -1,9 +1,9 @@
 package edu.cascadia.mobile.apps.passwordcheck;
 // Adapted from https://www.bignerdranch.com/blog/two-way-data-binding-on-android-observing-your-view-with-xml/
-import android.databinding.BaseObservable;
-import com.android.databinding.library.baseAdapters.BR;
+import androidx.databinding.BaseObservable;
 
-import android.databinding.Bindable;
+
+import androidx.databinding.Bindable;
 
 public class PasswordViewModel extends BaseObservable {
     private String password;
@@ -27,7 +27,7 @@ public class PasswordViewModel extends BaseObservable {
     }
 
     public void setPassword(String password) {
-        if(this.password != password) {
+        if(!this.password.equals(password)) {
             this.password = password;
             notifyPropertyChanged(BR.passwordQuality);
             notifyPropertyChanged(BR.password);
